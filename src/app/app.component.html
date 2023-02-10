@@ -1,0 +1,15 @@
+<form [formGroup]="input" #form="ngForm" >
+<label for="types">Choose a Type</label>
+<select id="types" name="types" formControlName="user_input" (change)="onchange()"> 
+  <option [value]="data.type" *ngFor="let data of types">{{data.type}}</option>
+</select>
+<br><br>
+<input type="text" formControlName="field_1" maxlength="15">
+<br><br>
+<input type="text" formControlName="field_2" maxlength="15">
+<br><br>
+
+<button (click)="onreset()" class="btn btn-secondary btn-sm">Reset</button>
+<br><br>
+<button (click)="onsave()" class="btn btn-secondary btn-sm"  [disabled]="form.invalid">SAVE</button>
+</form>
